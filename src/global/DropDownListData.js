@@ -1,7 +1,6 @@
 export const colors=['White','Black','Red']
 
 export const cities=[
-
     {
         name:"Bangalore",
         places:['JP Nagar', 'Jay Nagar','Vijay Nagar']
@@ -15,3 +14,4 @@ export const cities=[
         places:['Mysore zoo', 'KRS','Palace']
     }
 ]
+

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { colors } from '../global/DropDownListData';
+import Heading from './Heading';
+import DropDown from './DropDown';
 
 function ColorsPage({selectedColor,setSelectedColor}) {
 
@@ -13,17 +15,11 @@ function ColorsPage({selectedColor,setSelectedColor}) {
   return (
     <div>
       <Link to='/citiespage'>Go to Cities Page</Link>
-      <h1>Select a city</h1>
-      <select value={selectedColor} onChange={handleColorChange}>
-        <option>Select the color</option>
-        {colors.map((color) => (
-          <option key={color} value={color}>
-            {color}
-          </option>
-        ))}
-      </select>
+      <Heading value={'Select a color'}/>
+      <DropDown handleOptionChange={handleColorChange} selectedOption={selectedColor} options={colors} option={'Color'}/>
     </div>
   );
 }
 
 export default ColorsPage;
+
