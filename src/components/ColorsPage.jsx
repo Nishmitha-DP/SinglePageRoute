@@ -3,18 +3,10 @@ import { Link } from 'react-router-dom';
 import { colors } from '../global/DropDownListData';
 import Heading from './Heading';
 import DropDown from './DropDown';
+import { useLocalStorage } from './UseLocalStorage';
 
 function ColorsPage() {
-  const [selectedColor, setSelectedColor] = useState();
-
-  useEffect(() => {
-    const storedSelectedColor = localStorage.getItem('selectedColor');
-    if (storedSelectedColor) setSelectedColor(storedSelectedColor);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('selectedColor', selectedColor);
-  }, [selectedColor]);
+  const [selectedColor, setSelectedColor] = useLocalStorage('selectedColor','');
 
   const handleColorChange = (event) => {
     const color = event.target.value;
